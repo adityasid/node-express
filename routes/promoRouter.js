@@ -1,11 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 
-const dishRouter = express.Router();
+const promoRouter = express.Router();
 
-dishRouter.use(bodyParser.json());
+promoRouter.use(bodyParser.json());
 
-dishRouter.route('/')
+promoRouter.route('/')
 .all((req,res,next) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
@@ -26,7 +26,7 @@ dishRouter.route('/')
 });
 
 
-dishRouter.route('/:dishId')
+promoRouter.route('/:dishId')
 .all((req,res,next) => {
     res.statusCode = 200;
     res.setHeader('Content-Type', 'text/plain');
@@ -48,4 +48,4 @@ dishRouter.route('/:dishId')
     res.end('Deleting dish: ' + req.params.dishId);
 });
 
-module.exports = dishRouter;
+module.exports = promoRouter;
